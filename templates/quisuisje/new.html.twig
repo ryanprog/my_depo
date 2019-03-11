@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Quisuisje{% endblock %}
+
+{% block body %}
+    <h1>Create new Quisuisje</h1>
+
+    {{ include('quisuisje/_form.html.twig') }}
+
+    <a href="{{ path('quisuisje_index') }}">back to list</a>
+{% endblock %}

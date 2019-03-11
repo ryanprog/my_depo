@@ -4,3 +4,23 @@
 #index:
 #    path: /
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+app_lucky_number:
+    path: /Ryan
+    controller: App\Controller\LuckyController::number
+    
+admin:
+    path: /admin
+    controller: App\Controller\LuckyController::admin
+    
+Createxp:     
+    path: lucky/maclef/Ryan/experiences/create
+    controller: App\Controller\FormController::create
+    
+editebdd:
+    path: lucky/maclef/Ryan/bdd/edit/{id}
+    controller: App\Controller\FormController::edit    
+    
+validbdd: 
+    path: /bdd/valid
+    controller: App\Controller\FormController::valid

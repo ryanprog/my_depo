@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Competences index{% endblock %}
+
+{% block body %}
+    <h1>Competences index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Langues</th>
+                <th>Logiciels</th>
+                <th>Sport</th>
+                <th>Competence1</th>
+                <th>Competence2</th>
+                <th>Competence3</th>
+                <th>Competence4</th>
+                <th>Competence5</th>
+                <th>Competence6</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for competence in competences %}
+            <tr>
+                <td>{{ competence.id }}</td>
+                <td>{{ competence.langues }}</td>
+                <td>{{ competence.logiciels }}</td>
+                <td>{{ competence.sport }}</td>
+                <td>{{ competence.competence1 }}</td>
+                <td>{{ competence.competence2 }}</td>
+                <td>{{ competence.competence3 }}</td>
+                <td>{{ competence.Competence4 }}</td>
+                <td>{{ competence.competence5 }}</td>
+                <td>{{ competence.competence6 }}</td>
+                <td>
+                    <a href="{{ path('competences_show', {'id': competence.id}) }}">show</a>
+                    <a href="{{ path('competences_edit', {'id': competence.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('competences_new') }}">Create new</a>
+{% endblock %}

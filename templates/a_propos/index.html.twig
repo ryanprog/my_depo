@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}APropos index{% endblock %}
+
+{% block body %}
+    <h1>APropos index</h1>
+
+    <table class="table tab_formation">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for a_propo in a_propos %}
+            <tr>
+                <td class="toto">{{ a_propo.id }}</td>
+                <td>{{ a_propo.text }}</td>
+                <td>
+                    <a href="{{ path('a_propos_show', {'id': a_propo.id}) }}">show</a>
+                    <a href="{{ path('a_propos_edit', {'id': a_propo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('a_propos_new') }}">Create new</a>
+{% endblock %}
+

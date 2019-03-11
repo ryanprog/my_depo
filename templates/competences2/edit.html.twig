@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Competences2{% endblock %}
+
+{% block body %}
+    <h1>Edit Competences2</h1>
+
+    {{ include('competences2/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('competences2_index') }}">back to list</a>
+
+    {{ include('competences2/_delete_form.html.twig') }}
+{% endblock %}

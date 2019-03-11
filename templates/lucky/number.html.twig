@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CV</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!--Custom fonts. To improve load times, remove this and update the h1 styling in style.css--> 
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="./my_cv/public/style.css" type="text/css" />
+	<link type="text/css" rel="stylesheet" href="{{ asset('style.css') }}">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	
+	<!-- just in case viewer is using Internet Explorer -->
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+<body>
+	
+	<!-- Header-->
+	<header>
+		<h1>Ryan Monnier</h1>
+		{% for nom_titre_cv in NomTitreCV %}
+			<p>
+				{{nom_titre_cv.gettext()}}
+			</p>
+
+		{% endfor %}
+	</header>
+	
+	<div class="container">
+		
+		<!-- Introduction-->
+		<section>
+				{% for A_propos in APropos %}
+					<h1 class="text-center">A Propos</h1>
+						<p>
+							{{A_propos.gettext()}}
+						</p>
+						{% if is_granted('ROLE_ADMIN') %}
+							<a href="{{ path('a_propos_new') }}" target="_blank"><button type="button">Ajouter</button></a>
+							<a href="{{ path('a_propos_index') }}" target="_blank"><button type="button">Afficher</button></a>
+							<a href="{{ path('a_propos_edit',{'id':A_propos.getId()}) }}" target="_blank"><button type="button">Modifier</button></a>
+							<a href="{{ path('a_propos_delete',{'id':A_propos.getId()}) }}" target="_blank"><button type="button">Supprimer</button></a>
+						{% endif %}
+				{% endfor %}
+		</section>
+		
+		<hr>
+		
+		<!-- Testimonials-->	
+		<section class="testimonial">
+		{% for competences in Competences %}	
+			<h1>Mes compétences</h1>
+			<div class="row">
+					<div class="grid-2">
+						<h2>Langues</h2>
+						<p>
+							{{competences.getlangues()}}
+						</p>
+					</div>	
+					<div class="grid-2">
+						<h2>Logiciels</h2>
+						<p>{{competences.getlogiciels()}}</p>
+					</div>
+					<div class="grid-2">
+						<h2>Sports</h2>
+						<p>{{competences.getsport()}}</p>
+					</div>
+			</div>
+			{% if is_granted('ROLE_ADMIN') %}
+				<a href="{{ path('competences_new') }}" target="_blank"><button type="button">Ajouter</button></a>
+				<a href="{{ path('competences_index') }}" target="_blank"><button type="button">Afficher</button></a>
+				<a href="{{ path('competences_edit',{'id':competences.getId()}) }}" target="_blank"><button type="button">Modifier</button></a>
+				<a href="{{ path('competences_delete',{'id':competences.getId()}) }}" target="_blank"><button type="button">Supprimer</button></a>
+			{% endif %}
+		{% endfor %}	
+		</section>
+	</div> <!-- End container-->
+	
+	<!-- Spotlight -->
+	<section class="spotlight">
+		<div class="container">
+			<div class="row">
+				<div class="grid-3">
+					<img src="/images/portrait.jpg">
+				</div>
+				<div class="grid-3">
+					<h1>Qui suis-je ?</h1>
+					<p>
+						{% for quisuisje in Quisuisje %}
+	
+						<p>
+							{{quisuisje.gettext()}}
+						</p>
+						
+						{% if is_granted('ROLE_ADMIN') %}
+							<a href="{{ path('quisuisje_new') }}" target="_blank"><button type="button">Ajouter</button></a>
+							<a href="{{ path('quisuisje_index') }}" target="_blank"><button type="button">Afficher</button></a>
+							<a href="{{ path('quisuisje_edit',{'id':quisuisje.getId()}) }}" target="_blank"><button type="button">Modifier</button></a>
+							<a href="{{ path('quisuisje_delete',{'id':quisuisje.getId()}) }}" target="_blank"><button type="button">Supprimer</button></a>
+						{% endif %}
+					</p>
+				{% endfor %}	
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<!-- New container-->
+	<div class="container">
+	
+		<section class="education">	
+			<h1>Mes experiences professionnelles</h1><br/>
+			{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('experiences_new') }}" target="_blank"><button type="button">Ajouter</button></a>{% endif %}
+		</section>
+		
+		<hr>
+			
+		<!--Experience Tables-->
+		<section class="experience">
+		{% for experiences in experiences %}	
+			<div class="row">
+				<div class="col-4">
+					<h2>{{experiences.getName()}}</h2>
+					<p>{{experiences.getDate()}} - {{experiences.getlieu()}}</p>
+				</div>
+				<div class="col-8">
+					<ul>
+						<li>{{experiences.getexperience1()}}</li>
+						<li>{{experiences.getexperience2()}}</li>
+						<li>{{experiences.getexperience3()}}</li>
+					</ul>
+					
+				</div>
+			</div>
+				{% if is_granted('ROLE_ADMIN') %}
+					<a href="{{ path('experiences_index') }}" target="_blank"><button type="button">Afficher</button></a>
+					<a href="{{ path('experiences_edit',{'id':experiences.getId()}) }}" target="_blank"><button type="button">Modifier</button></a>
+					<a href="{{ path('experiences_delete',{'id':experiences.getId()}) }}" target="_blank"><button type="button">Supprimer</button></a>
+				{% endif %}
+		{% endfor %}	
+		</section>
+		
+		<hr>
+	
+		
+		<section>
+			<!--List of skills-->
+			<div class="row">
+				<div class="col-4">
+					<h1>Languages informatique</h1>
+					{% for competences2 in Competences2 %}	
+					{% if is_granted('ROLE_ADMIN') %}
+						<a href="{{ path('competences2_new') }}" target="_blank"><button type="button">Ajouter</button></a>
+						<a href="{{ path('competences2_index') }}" target="_blank"><button type="button">Afficher</button></a>
+						<a href="{{ path('competences2_edit',{'id':competences2.getId()}) }}" target="_blank"><button type="button">Modifier</button></a>
+						<a href="{{ path('competences2_delete',{'id':competences2.getId()}) }}" target="_blank"><button type="button">Supprimer</button></a>
+					{% endif %}
+					<ul>
+						<li>{{competences2.competence1()}}</li>
+						<li>{{competences2.competence2()}}</li>
+						<li>{{competences2.competence3()}}</li>
+						<li>{{competences2.competence4()}}</li>
+						<li>{{competences2.competence5()}}</li>
+						<li>{{competences2.competence6()}}</li>
+					</ul>
+				{% endfor %}	
+				</div>
+				
+				<div class="col-8">
+					<h1>Conclusion</h1>
+					<p>
+						{% for conclusion in Conclusion %}
+	
+						<p>
+							{{conclusion.gettext()}}
+						</p>
+						{% if is_granted('ROLE_ADMIN') %}
+						<a href="{{ path('conclusion_new') }}" target="_blank"><button type="button">Ajouter</button></a>
+						<a href="{{ path('conclusion_index') }}" target="_blank"><button type="button">Afficher</button></a>
+						<a href="{{ path('conclusion_edit',{'id':conclusion.getId()}) }}" target="_blank"><button type="button">Modifier</button></a>
+						<a href="{{ path('conclusion_delete',{'id':conclusion.getId()}) }}" target="_blank"><button type="button">Supprimer</button></a>
+					{% endif %}
+
+				{% endfor %}
+					</p>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Contact --> 
+	<div class="form-contact">
+		
+		
+	<H1 class="text-center">CONTACTEZ-MOI</H1>
+	{{ form_start(form) }}
+	    {{ form_widget(form) }}
+	    <button class="btn btn-danger">{{ button_label|default('Submit') }}</button>
+	{{ form_end(form) }}
+
+</div>		
+		<!-- Fin Contact --> 
+		
+		
+		<!--Footer-->
+		<footer class="center">
+			<hr>
+			<span>&copy; CV - Ryan 2019</span>
+		</footer>
+		
+	</div><!-- End Container -->
+	
+</body>
+</html>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.contact-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+} 
+</style>

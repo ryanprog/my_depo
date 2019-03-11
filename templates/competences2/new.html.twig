@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Competences2{% endblock %}
+
+{% block body %}
+    <h1>Create new Competences2</h1>
+
+    {{ include('competences2/_form.html.twig') }}
+
+    <a href="{{ path('competences2_index') }}">back to list</a>
+{% endblock %}

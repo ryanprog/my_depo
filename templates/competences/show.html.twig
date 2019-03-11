@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Competences{% endblock %}
+
+{% block body %}
+    <h1>Competences</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ competence.id }}</td>
+            </tr>
+            <tr>
+                <th>Langues</th>
+                <td>{{ competence.langues }}</td>
+            </tr>
+            <tr>
+                <th>Logiciels</th>
+                <td>{{ competence.logiciels }}</td>
+            </tr>
+            <tr>
+                <th>Sport</th>
+                <td>{{ competence.sport }}</td>
+            </tr>
+            <tr>
+                <th>Competence1</th>
+                <td>{{ competence.competence1 }}</td>
+            </tr>
+            <tr>
+                <th>Competence2</th>
+                <td>{{ competence.competence2 }}</td>
+            </tr>
+            <tr>
+                <th>Competence3</th>
+                <td>{{ competence.competence3 }}</td>
+            </tr>
+            <tr>
+                <th>Competence4</th>
+                <td>{{ competence.Competence4 }}</td>
+            </tr>
+            <tr>
+                <th>Competence5</th>
+                <td>{{ competence.competence5 }}</td>
+            </tr>
+            <tr>
+                <th>Competence6</th>
+                <td>{{ competence.competence6 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('competences_index') }}">back to list</a>
+
+    <a href="{{ path('competences_edit', {'id': competence.id}) }}">edit</a>
+
+    {{ include('competences/_delete_form.html.twig') }}
+{% endblock %}

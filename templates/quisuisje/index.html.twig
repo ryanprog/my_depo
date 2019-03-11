@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quisuisje index{% endblock %}
+
+{% block body %}
+    <h1>Quisuisje index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for quisuisje in quisuisjes %}
+            <tr>
+                <td>{{ quisuisje.id }}</td>
+                <td>{{ quisuisje.text }}</td>
+                <td>
+                    <a href="{{ path('quisuisje_show', {'id': quisuisje.id}) }}">show</a>
+                    <a href="{{ path('quisuisje_edit', {'id': quisuisje.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('quisuisje_new') }}">Create new</a>
+{% endblock %}

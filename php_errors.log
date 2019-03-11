@@ -1,0 +1,6 @@
+[07-Feb-2019 14:11:35 UTC] PHP Fatal error:  Class 'App\Controller\Controller' not found in /home/ubuntu/workspace/my_cv/src/Controller/FormController.php on line 12
+[07-Feb-2019 14:11:49 UTC] PHP Fatal error:  Class 'App\Controller\Controller' not found in /home/ubuntu/workspace/my_cv/src/Controller/FormController.php on line 12
+[07-Feb-2019 14:12:29 UTC] PHP Fatal error:  Class 'App\Controller\Controller' not found in /home/ubuntu/workspace/my_cv/src/Controller/FormController.php on line 12
+[07-Feb-2019 14:16:15 UTC] PHP Fatal error:  Class 'App\Controller\Controller' not found in /home/ubuntu/workspace/my_cv/src/Controller/FormController.php on line 12
+[07-Feb-2019 14:56:49 UTC] PHP Fatal error:  Cannot use App\Form\SubmitType as SubmitType because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/FormController.php on line 9
+[07-Feb-2019 15:09:15 UTC] PHP Fatal error:  Class 'Symfony\Component\Form\Type' not found in /home/ubuntu/workspace/my_cv/src/Form/ExperiencesType.php on line 11
