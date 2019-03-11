@@ -26,7 +26,7 @@ class FormationRepository extends ServiceEntityRepository
         ->createQueryBuilder();
         
         $qBuilder->select('f');
-        $qBuilder->from('AppBundle:Formation','f');
+        $qBuilder->from('AppBundle:Formation', 'f');
         
         $result = $qBuilder->getQuery()->getResult();
         

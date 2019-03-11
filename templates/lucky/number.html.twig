@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="utf-8" />
 	<title>CV</title>
@@ -20,22 +20,56 @@
 </head>
 
 <body>
-	
 	<!-- Header-->
 	<header>
-		<h1>Ryan Monnier</h1>
+		<nav role="navigation" class="navbarstyle">
+		  <div id="menuToggle">
+		    <!--
+		    A fake / hidden checkbox is used as click reciever,
+		    so you can use the :checked selector on it.
+		    -->
+		    <input type="checkbox" />
+		    
+		    <!--
+		    Some spans to act as a hamburger.
+		    
+		    They are acting like a real hamburger,
+		    not that McDonalds stuff.
+		    -->
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		    
+		    <!--
+		    Too bad the menu has to be inside of the button
+		    but hey, it's pure CSS magic.
+		    -->
+		    <ul id="menu">
+		      <a href="#about"><li>A propos</li></a>
+		      <a href="#skills"><li>Mes compétences</li></a>
+		      <a href="#whoiam"><li>Qui suis-je</li></a>
+		      <a href="#experience"><li>Experiences Professionnelles</li></a>
+		      <a href="#language"><li>Languages / Conclusion</li></a>
+		      <a href="#contact"><li>Contact</li></a>
+		    </ul>
+		  </div>
+		</nav>
+		<div class="container">
+			
+		<h1 class="text-center text-light">Ryan Monnier</h1>
 		{% for nom_titre_cv in NomTitreCV %}
-			<p>
+			<p class="text-center text-light">
 				{{nom_titre_cv.gettext()}}
 			</p>
-
+		</div>
 		{% endfor %}
+		
 	</header>
 	
 	<div class="container">
 		
 		<!-- Introduction-->
-		<section>
+		<section class="center" id="about">
 				{% for A_propos in APropos %}
 					<h1 class="text-center">A Propos</h1>
 						<p>
@@ -53,7 +87,7 @@
 		<hr>
 		
 		<!-- Testimonials-->	
-		<section class="testimonial">
+		<section id="skills" class="testimonial">
 		{% for competences in Competences %}	
 			<h1>Mes compétences</h1>
 			<div class="row">
@@ -83,7 +117,7 @@
 	</div> <!-- End container-->
 	
 	<!-- Spotlight -->
-	<section class="spotlight">
+	<section id="whoiam" class="spotlight">
 		<div class="container">
 			<div class="row">
 				<div class="grid-3">
@@ -115,7 +149,7 @@
 	<!-- New container-->
 	<div class="container">
 	
-		<section class="education">	
+		<section id="exprience" class="education">	
 			<h1>Mes experiences professionnelles</h1><br/>
 			{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('experiences_new') }}" target="_blank"><button type="button">Ajouter</button></a>{% endif %}
 		</section>
@@ -150,7 +184,7 @@
 		<hr>
 	
 		
-		<section>
+		<section id="language">
 			<!--List of skills-->
 			<div class="row">
 				<div class="col-4">
@@ -195,7 +229,7 @@
 		</section>
 		
 		<!-- Contact --> 
-	<div class="form-contact">
+	<div id="contact" class="form-contact">
 		
 		
 	<H1 class="text-center">CONTACTEZ-MOI</H1>
@@ -219,37 +253,6 @@
 </body>
 </html>
 
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+<script type="text/javascript">
 
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.contact-form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-} 
-</style>
+</script>

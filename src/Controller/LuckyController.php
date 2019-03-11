@@ -18,18 +18,15 @@ use App\Entity\message;
 use App\Entity\Personne;
 use App\Form\ContactType;
 
-
 class LuckyController extends Controller
-
 {
     public function number(Request $request)
     {
-
-        $experiences = $this->getDoctrine()->getRepository(Experiences::class)->findAll();    
-        $A_propos = $this->getDoctrine()->getRepository(APropos::class)->findAll(); 
-        $nom_titre_cv = $this->getDoctrine()->getRepository(NomTitreCV::class)->findAll(); 
+        $experiences = $this->getDoctrine()->getRepository(Experiences::class)->findAll();
+        $A_propos = $this->getDoctrine()->getRepository(APropos::class)->findAll();
+        $nom_titre_cv = $this->getDoctrine()->getRepository(NomTitreCV::class)->findAll();
         $competences = $this->getDoctrine()->getRepository(Competences::class)->findAll();
-        $competences2 = $this->getDoctrine()->getRepository(Competences2::class)->findAll(); 
+        $competences2 = $this->getDoctrine()->getRepository(Competences2::class)->findAll();
         $quisuisje = $this->getDoctrine()->getRepository(Quisuisje::class)->findAll();
         $conclusion = $this->getDoctrine()->getRepository(Conclusion::class)->findAll();
         $personne = $this->getDoctrine()->getRepository(Personne::class)->findAll();
@@ -62,7 +59,5 @@ class LuckyController extends Controller
     public function admin()
     {
         return $this->redirectToRoute('app_lucky_number');
-
     }
-    
 }

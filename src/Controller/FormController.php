@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller; 
+namespace App\Controller;
 
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
@@ -12,17 +12,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Experiences;
 /*use App\Entity\Conclusion;*/
 use App\Form\ExperiencesType;
+
 /*use App\Form\ConclusionType;*/
 
 
 
 class FormController extends AbstractController
 {
-     public function create()
+    public function create()
     {
         $experiences = new Experiences();
         $form = $this->createForm(ExperiencesType::class, $experiences);
-        return $this->render('lucky/create.html.twig', [
+        return $this->render(
+            'lucky/create.html.twig',
+            [
             'entity' => $experiences,
             'form' => $form->createView(),
             ]
@@ -35,10 +38,10 @@ class FormController extends AbstractController
         $experiences = $entityManager->getRepository(Experience::class)->findOne(['id' => $id]);
         
         
-            $entityManager = $this->getDoctrine()->getManager();
-            $enityManager->remove($experiences);
-            $entityManager->flush();
-    }    
+        $entityManager = $this->getDoctrine()->getManager();
+        $enityManager->remove($experiences);
+        $entityManager->flush();
+    }
     
     public function edit($id)
     {
@@ -46,7 +49,9 @@ class FormController extends AbstractController
         $experiences = $entityManager->getRepository(Experiences::class)->findOneBy(['id' => $id]);
         $form = $this->createForm(ExperiencesType::class, $experiences);
         
-        return $this->render('lucky/create.html.twig', [
+        return $this->render(
+            'lucky/create.html.twig',
+            [
             'entity' => $experiences,
             'form' => $form->createView(),
             ]
@@ -71,12 +76,13 @@ class FormController extends AbstractController
             return $this->redirectToRoute('app_lucky_number');
         }
     
-        return $this->render('lucky/create.html.twig', [
+        return $this->render(
+            'lucky/create.html.twig',
+            [
             'entity' => $experiences,
             'form' => $form->createView(),
             ]
         )
         ->getForm();
     }
-    
 }

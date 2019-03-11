@@ -19,19 +19,19 @@ class ExperiencesRepository extends ServiceEntityRepository
         parent::__construct($registry, Experiences::class);
     }
     
-   /*  public function findAllExperiences()
-    {
-        $qBuilder = $this
-        ->getEntityManager()
-        ->createQueryBuilder();
-        
-        $qBuilder->select('e');
-        $qBuilder->from('AppBundle:Experiences','e');
-        
-        $result = $qBuilder->getQuery()->getResult();
-        
-        return $return;
-    }*/
+    /*  public function findAllExperiences()
+     {
+         $qBuilder = $this
+         ->getEntityManager()
+         ->createQueryBuilder();
+
+         $qBuilder->select('e');
+         $qBuilder->from('AppBundle:Experiences','e');
+
+         $result = $qBuilder->getQuery()->getResult();
+
+         return $return;
+     }*/
 
     // /**
     //  * @return Experiences[] Returns an array of Experiences objects
