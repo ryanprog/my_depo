@@ -9,10 +9,14 @@ En ant que simple visiteur une fois sur mon cv vous pourrez découvrir son conte
 à toutes ces informations soit en scrollant vers le bas et découvrir au fur et à mesure. 
 Soit ouvrir les 3 barres bras en haut à gauche ou à l'aide d'un simpel click vous amène à votre destination.
 
+<hr>
+
 Maintenant parlons de la partie un peu plus complexe et détaillé de ce CV en ligne. 
 Comme je l'avais précisé au début celui-ci est 100% modifiable dans ses contenus, en effet lorsque 
 vous accéder au site en tant qu'administrateur en ajoutant "/admin",
 vous aurez accès à une la même page avec des fonctionnalitées supplémentaires, entièrement dédié aux personnes étant connecté avec la permission de l'administrateur.
+
+<hr>
 
 Dans chaques catégories de mon CV vous pourrez "Ajouter", "Afficher", "Modifier" ou "Supprimer" n'importe quel éléments, et ça c'est vrai plus!
 
@@ -25,4 +29,18 @@ Le site est entièrement en Bootstrap responsive permettant d'être adapté à n
 De plus le site possède l'enregistrement d'une base de donnée "Contact" permettant d'enregistrer l'intégralité des messages
 ainsi que des noms des personnes concernés par les messages.
 
+pour rentrer dans des termes plus technique il y a deux test, un test unitaire qui test si 'Entity Experience' fonctionne, et un texte fonctionnel si la base renvoie bien le nom de 'Entity Lieu,date, experience1 etc..'.
+L'annotion @ApiRessource est présente sur chaque entité. Et cerise sur le gateau, le projet est selon un Checkstyle conforme.
 
+<hr>
+<h2>Prérequis</h2>
+Installation
+Crée un dossier my_cv puis glisser les éléments à l'intérieur.
+
+cd my_cv
+Puis les commandes sont accessibles via la commande
+
+ php bin/console
+Les tests
+Ce test vérifie si 'Entity Experience' fonctionne et ajoute bien les titres grâce à la fonction SetTitle
+ php vendor/bin/codecept run unit ExampleTest
