@@ -39,10 +39,7 @@ Pour accéder à la surface administrateur, il vous suffit juste de cliquer sur 
 <h4>Utilisateur : admin</h4>
 <h4>Mot de pass : ryan</h4>
 
-cd my_cv
-Puis les commandes sont accessibles via la commande
+<h2>Conclusion</h2>
 
- php bin/console
-Les tests
-Ce test vérifie si 'Entity Experience' fonctionne et ajoute bien les titres grâce à la fonction SetTitle
- php vendor/bin/codecept run unit ExampleTest
+Pour conclure, ce site offre une grande liberté de modification & personnalisation afin qu'il soit adaptée à tout les goûts et facile d'utilisation.
+
