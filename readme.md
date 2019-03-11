@@ -1,4 +1,4 @@
-Bonjour, et bienvenue sur mon magnifique CV! 
+<h1>Bonjour, et bienvenue sur mon magnifique CV! </h1>
 
 Ce CV à été crée dans le but d'avoir une modificiation complète de son contenu, c'est à dire une mise à jour très rapide.
 
@@ -33,9 +33,11 @@ pour rentrer dans des termes plus technique il y a deux test, un test unitaire q
 L'annotion @ApiRessource est présente sur chaque entité. Et cerise sur le gateau, le projet est selon un Checkstyle conforme.
 
 <hr>
-<h2>Prérequis</h2>
-Installation
-Crée un dossier my_cv puis glisser les éléments à l'intérieur.
+<h2>Admin</h2>
+Pour accéder à la surface administrateur, il vous suffit juste de cliquer sur ce lien et d'entrer les identifiants suivants : https://symfony-projet-ryanprog.c9users.io/my_cv/public/index.php/admin
+
+<h4>Utilisateur : admin</h4>
+<h4>Mot de pass : ryan</h4>
 
 cd my_cv
 Puis les commandes sont accessibles via la commande
