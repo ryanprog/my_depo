@@ -18,5 +18,11 @@ Dans chaques catégories de mon CV vous pourrez "Ajouter", "Afficher", "Modifier
 
 Toutes ces données sont enregistés dans une base de données ou vous pouvez y avoir accès très facilement avec phpmyadmin si vous souhaitez modifier vos contenus directement sur cette infrastructure 
 au lieu de celle déjà proposée directement sur votre CV à l'aide d'un simple clique!
+Le site est entièrement en Bootstrap responsive permettant d'être adapté à n'importe quel support ! 
+
+<hr>
+
+De plus le site possède l'enregistrement d'une base de donnée "Contact" permettant d'enregistrer l'intégralité des messages
+ainsi que des noms des personnes concernés par les messages.
 
 
