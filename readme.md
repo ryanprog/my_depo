@@ -16,7 +16,7 @@ vous aurez accès à une la même page avec des fonctionnalitées supplémentair
 
 Dans chaques catégories de mon CV vous pourrez "Ajouter", "Afficher", "Modifier" ou "Supprimer" n'importe quel éléments, et ça c'est vrai plus!
 
-![Alt text](/images/red.png "assertion")
-
+Toutes ces données sont enregistés dans une base de données ou vous pouvez y avoir accès très facilement avec phpmyadmin si vous souhaitez modifier vos contenus directement sur cette infrastructure 
+au lieu de celle déjà proposée directement sur votre CV à l'aide d'un simple clique!
 
 
